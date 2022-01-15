@@ -8,8 +8,8 @@ if [ $? -ne 0 ]; then
 fi
 apt -y install build-essential libx11-dev libxinerama-dev libxft-dev \
                git wget xinit xorg xserver-xorg-dev xserver-xorg x11-xserver-utils \
-               curl
-    
+               curl compton feh
+               
 cd /dwm-6.3/
 make clean install
 make clean
