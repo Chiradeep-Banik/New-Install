@@ -5,7 +5,7 @@ echo "This is the installation script....\n"
 echo "Installing the softwares using apt\n"
 sudo apt -y install build-essential libx11-dev libxinerama-dev libxft-dev \
                git wget xinit xorg xserver-xorg-dev xserver-xorg x11-xserver-utils \
-               curl compton feh vim
+               curl compton feh vim alsa-utils trash-cli
 
 echo "Copied the bashrc and vimrc\n"
 cp .bashrc ~/.bashrc
@@ -46,8 +46,23 @@ git clone https://github.com/Chiradeep-Banik/dmenu.git
 cd dmenu
 sudo make clean
 sudo make clean install
+cd ..
+
+# slstatus -- status bar modifier
+echo "Starting slstatus\n"
+git clone https://github.com/Chiradeep-Banik/slstatus.git
+cd slstatus
+sudo make clean
+sudo make clean install
 cd ~
 
 # Adding the xinitrc
-echo feh --bg-scale ~/Pictures/batman-dark.jpg >> .xinitrc
-echo exec dwm >> .xinitrc
+# echo feh --bg-scale ~/Pictures/batman-dark.jpg & >> .xinitrc
+# echo compton & >> .xinitrc
+# echo exec slstatus & >> .xinitrc
+# echo exec dwm >> .xinitrc
+tee -a .xinitrc <<EOF
+feh --bg-scale ~/Pictures/batman-dark.jpg &
+compton &
+exec slstatus &
+exec dwm
