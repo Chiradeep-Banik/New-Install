@@ -7,9 +7,10 @@ sudo apt -y install build-essential libx11-dev libxinerama-dev libxft-dev \
                git wget xinit xorg xserver-xorg-dev xserver-xorg x11-xserver-utils \
                curl compton feh vim alsa-utils trash-cli
 
-echo "Copied the bashrc and vimrc\n"
+echo "Copied the bashrc, vimrc and xinitrc\n"
 cp .bashrc ~/.bashrc
 cp .vimrc ~/.vimrc
+cp .xinitrc ~/.xinitrc
 
 echo "Installed vim plug\n"
 sudo curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -55,14 +56,3 @@ cd slstatus
 sudo make clean
 sudo make clean install
 cd ~
-
-# Adding the xinitrc
-# echo feh --bg-scale ~/Pictures/batman-dark.jpg & >> .xinitrc
-# echo compton & >> .xinitrc
-# echo exec slstatus & >> .xinitrc
-# echo exec dwm >> .xinitrc
-tee -a .xinitrc <<EOF
-feh --bg-scale ~/Pictures/batman-dark.jpg &
-compton &
-exec slstatus &
-exec dwm
