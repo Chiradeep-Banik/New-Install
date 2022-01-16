@@ -15,6 +15,9 @@ echo "Installed vim plug\n"
 sudo curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+echo "Adding the wallpaper"
+mkdir ~/Pictures
+cp batman-dark.jpg ~/Pictures/
 
 echo "Make the suckless directory\n"
 cd ~
@@ -46,4 +49,5 @@ sudo make clean install
 cd ~
 
 # Adding the xinitrc
+echo feh --bg-scale ~/Pictures/batman-dark.jpg >> .xinitrc
 echo exec dwm >> .xinitrc
