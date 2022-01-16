@@ -27,7 +27,7 @@ cd suckless
 
 #DWM -- Tiling window manager
 echo "Starting dwm\n"
-git clone https://github.com/Chiradeep-Banik/dwm.git
+git clone git://git.suckless.org/dwm
 cd dwm
 sudo make clean
 sudo make clean install
