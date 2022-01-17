@@ -97,6 +97,8 @@ alias list='apt list --upgradable'
 alias remove='sudo apt purge --autoremove'
 alias install='sudo apt install'
 alias rg='ranger'
+alias shutdown='sudo systemctl poweroff'
+alias restart='sudo systemctl reboot'
 #alias la='ls -A'
 #alias l='ls -CF'
 
