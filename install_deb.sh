@@ -4,17 +4,13 @@ echo "This is the installation script....\n"
 
 echo "Installing the softwares using apt\n"
 sudo apt -y install build-essential libx11-dev libxinerama-dev libxft-dev \
-               git wget xinit xorg xserver-xorg-dev xserver-xorg x11-xserver-utils \
-               curl compton feh vim alsa-utils trash-cli
+               wget xinit xorg xserver-xorg-dev xserver-xorg x11-xserver-utils \
+               curl feh vim alsa-utils trash-cli git
 
 echo "Copied the bashrc, vimrc and xinitrc\n"
 cp .bashrc ~/.bashrc
 cp .vimrc ~/.vimrc
 cp .xinitrc ~/.xinitrc
-
-echo "Installed vim plug\n"
-sudo curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Adding the wallpaper"
 mkdir ~/Pictures
@@ -27,7 +23,7 @@ cd suckless
 
 #DWM -- Tiling window manager
 echo "Starting dwm\n"
-git clone git://git.suckless.org/dwm
+git clone https://github.com/Chiradeep-Banik/dwm.git
 cd dwm
 sudo make clean
 sudo make clean install
