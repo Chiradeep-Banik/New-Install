@@ -5,7 +5,7 @@ echo "This is the installation script....\n"
 echo "Installing the softwares using apt\n"
 sudo apt -y install build-essential libx11-dev libxinerama-dev libxft-dev \
                wget xinit xorg xserver-xorg-dev xserver-xorg x11-xserver-utils \
-               curl feh vim alsa-utils trash-cli git
+               curl feh vim alsa-utils trash-cli git sct
 
 echo "Copied the bashrc, vimrc and xinitrc\n"
 cp .bashrc ~/.bashrc
