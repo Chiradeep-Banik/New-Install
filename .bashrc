@@ -99,8 +99,6 @@ alias install='sudo apt install'
 alias rg='ranger'
 alias shutdown='sudo systemctl poweroff'
 alias restart='sudo systemctl reboot'
-#alias la='ls -A'
-#alias l='ls -CF'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -134,5 +132,3 @@ then
 else
     PS1="\[\e[1;32m\](\T) \[\e[1;36m\]\w \[\e[36m\]\[\e[1;33m\]\$(git_branch)\n   \[\e[1;31m\]|-->>\[\e[0m\] "
 fi
-
-# PS1="\[\e[1;32m\](\T) \[\e[1;36m\]\w \[\e[36m\]\[\e[1;33m\]\$(git_branch)\n   \[\e[1;31m\]|-->>\[\e[0m\] "
